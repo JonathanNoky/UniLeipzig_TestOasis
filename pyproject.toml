@@ -31,8 +31,8 @@ repository = "https://github.com/jonathannoky/unileipzig_testoasis"
 # Add your plugins to the list below.
 plugins = [
   "nomad-north-jupyter>=0.2.6",
-  "nomad-json-parser",
-  "NOMAD-PLD-UniLeipzig"
+  "nomad-json-parser @ git+https://github.com/FAIRmat-NFDI/nomad-json-parser",
+  "NOMAD-PLD-UniLeipzig @ git+https://github.com/JonathanNoky/NOMAD-PLD-UniLeipzig"
 ]
 jupyter = ["jupyter-events"]
 gpu-action = []
