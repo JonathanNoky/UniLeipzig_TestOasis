@@ -6,7 +6,7 @@ This is the NOMAD Oasis distribution of JonathanNoky.
 Below are instructions for how to [deploy this distribution](#deploying-the-distribution)
 and how to customize it through [adding plugins](#adding-a-plugin).
 
-> [!IMPORTANT]
+> [!IMPORTANT!]
 > Depending on the settings of the owner of this repository, the distributed image might
 > be private and require authentication to pull.
 > If you want to keep the image private you need to configure and use a personal access
