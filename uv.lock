@@ -2074,6 +2074,23 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/7f/2c/0f1e93c636720e8a3eb59af2bfda99d98b55891e1c53bc30c2e0e865f01b/lxml-6.1.1-cp314-cp314t-win_arm64.whl", hash = "sha256:58bb955caba94e467d2a96da17660d2d704e0675894cba21ab8a775b8621fd1c", size = 3817223, upload-time = "2026-05-19T19:22:56.823Z" },
 ]
 
+[package.optional-dependencies]
+html-clean = [
+    { name = "lxml-html-clean" },
+]
+
+[[package]]
+name = "lxml-html-clean"
+version = "0.4.5"
+source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
+dependencies = [
+    { name = "lxml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0a/63/195dfdde380a84df309e3bccf4384b034b745dba43426886f7ae623b4fba/lxml_html_clean-0.4.5.tar.gz", hash = "sha256:e2a4c7d5beedd17cd7b484d848a0571e54baa239a4f9df5546e3acba7f990560", size = 24142, upload-time = "2026-05-20T12:17:53.574Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6a/bd/6e2b76a6c5dee10397db9c929f0c5066766ec1036046f0335b7ca7ca08b8/lxml_html_clean-0.4.5-py3-none-any.whl", hash = "sha256:c76fcadd1e5bfb9b8bafc2200d51e4e78eb0dad67f56881c21dfb6484c7e7746", size = 14573, upload-time = "2026-05-20T12:17:52.215Z" },
+]
+
 [[package]]
 name = "mako"
 version = "1.3.12"
@@ -2652,6 +2669,7 @@ jupyter = [
     { name = "jupyter-events" },
 ]
 plugins = [
+    { name = "nomad-external-eln-integrations" },
     { name = "nomad-json-parser" },
     { name = "nomad-north-jupyter" },
     { name = "nomad-pld-unileipzig" },
@@ -2660,6 +2678,7 @@ plugins = [
 [package.metadata]
 requires-dist = [
     { name = "jupyter-events", marker = "extra == 'jupyter'" },
+    { name = "nomad-external-eln-integrations", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-external-eln-integrations" },
     { name = "nomad-json-parser", marker = "extra == 'plugins'", git = "https://github.com/FAIRmat-NFDI/nomad-json-parser" },
     { name = "nomad-lab", extras = ["dev", "infrastructure"], marker = "extra == 'dev'", specifier = "==1.4.3" },
     { name = "nomad-lab", extras = ["infrastructure"], specifier = "==1.4.3" },
@@ -2667,6 +2686,17 @@ requires-dist = [
     { name = "nomad-pld-unileipzig", marker = "extra == 'plugins'", git = "https://github.com/JonathanNoky/NOMAD-PLD-UniLeipzig" },
 ]
 provides-extras = ["plugins", "jupyter", "gpu-action", "cpu-action", "dev"]
+
+[[package]]
+name = "nomad-external-eln-integrations"
+version = "0.1.0"
+source = { git = "https://github.com/FAIRmat-NFDI/nomad-external-eln-integrations#009c8d25c27291a7dd7c2a5c24296285cb6b163c" }
+dependencies = [
+    { name = "lxml", extra = ["html-clean"] },
+    { name = "nomad-lab" },
+    { name = "nomad-openbis" },
+    { name = "numpy" },
+]
 
 [[package]]
 name = "nomad-json-parser"
@@ -2803,6 +2833,23 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/19/97/4dc44543907bd9a1259b5daf33c02409180c81090bf84b7bde227c84a213/nomad_north_jupyter-0.2.6.tar.gz", hash = "sha256:9f3fb5668c19ba9225cd6dd5c3f353083c2fdf44c08f8f54b654b77c35e8dc61", size = 114640, upload-time = "2026-06-29T15:24:46.314Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/01/96/43675168cf18b66884b71c49111d81f8677f4f8e459ce99d12dcc5451a1b/nomad_north_jupyter-0.2.6-py3-none-any.whl", hash = "sha256:c4b708e2c7032792b7e363aaab308c89512f561accd3c90745b93096a4b14b77", size = 14526, upload-time = "2026-06-29T15:24:44.966Z" },
+]
+
+[[package]]
+name = "nomad-openbis"
+version = "1.0.0"
+source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
+dependencies = [
+    { name = "pandas" },
+    { name = "python-dateutil" },
+    { name = "requests" },
+    { name = "tabulate" },
+    { name = "texttable" },
+    { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4a/03/3c7cdb0050fe6a0931bd2d49bab2762b08e6f5d386e7932c70bc8fb2fe95/nomad_openbis-1.0.0.tar.gz", hash = "sha256:827b6726f5f4fe1ceb96fd9996c80494cd918760ef13fa900abfb138b016cb36", size = 158171, upload-time = "2024-07-01T11:42:24.091Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9c/d1/36892a4c58a5f217e43642591f140fc8cbc21bccd79bfe84720d80564973/nomad_openbis-1.0.0-py3-none-any.whl", hash = "sha256:0049e9ae0ec93c5ec1f2db5cd0a4b205c2e664473fde6a7d0e01ed47d92e9b41", size = 157589, upload-time = "2024-07-01T11:42:22.321Z" },
 ]
 
 [[package]]
@@ -4756,6 +4803,15 @@ source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages
 sdist = { url = "https://files.pythonhosted.org/packages/47/c6/ee486fd809e357697ee8a44d3d69222b344920433d3b6666ccd9b374630c/tenacity-9.1.4.tar.gz", hash = "sha256:adb31d4c263f2bd041081ab33b498309a57c77f9acf2db65aadf0898179cf93a", size = 49413, upload-time = "2026-02-07T10:45:33.841Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d7/c1/eb8f9debc45d3b7918a32ab756658a0904732f75e555402972246b0b8e71/tenacity-9.1.4-py3-none-any.whl", hash = "sha256:6095a360c919085f28c6527de529e76a06ad89b23659fa881ae0649b867a9d55", size = 28926, upload-time = "2026-02-07T10:45:32.24Z" },
+]
+
+[[package]]
+name = "texttable"
+version = "1.7.0"
+source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1c/dc/0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2/texttable-1.7.0.tar.gz", hash = "sha256:2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638", size = 12831, upload-time = "2023-10-03T09:48:12.272Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/24/99/4772b8e00a136f3e01236de33b0efda31ee7077203ba5967fcc76da94d65/texttable-1.7.0-py2.py3-none-any.whl", hash = "sha256:72227d592c82b3d7f672731ae73e4d1f88cd8e2ef5b075a7a7f01a23a3743917", size = 10768, upload-time = "2023-10-03T09:48:10.434Z" },
 ]
 
 [[package]]
