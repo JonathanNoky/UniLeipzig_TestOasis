@@ -18,10 +18,11 @@ name = "nomad-distribution"
 description = "nomad distribution template leipzig"
 dynamic = ["version"]
 readme = "README.md"
-requires-python = ">=3.15"
+requires-python = ">=3.12"
 license = { file = "LICENSE" }
 dependencies = [
   "nomad-lab[infrastructure]==1.4.3",
+  "nomad-external-eln-integrations",
 ]
 
 [project.urls]
@@ -31,7 +32,6 @@ repository = "https://github.com/jonathannoky/unileipzig_testoasis"
 # Add your plugins to the list below.
 plugins = [
   "nomad-north-jupyter>=0.2.6",
-  "nomad-external-eln-integrations",
   "nomad-json-parser @ git+https://github.com/FAIRmat-NFDI/nomad-json-parser",
   "NOMAD-PLD-UniLeipzig @ git+https://github.com/JonathanNoky/NOMAD-PLD-UniLeipzig"
 ]
