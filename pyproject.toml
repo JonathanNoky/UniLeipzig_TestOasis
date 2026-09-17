@@ -19,8 +19,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = { file = "LICENSE" }
 dependencies = [
-  "nomad-lab[infrastructure]==1.4.3",
-  "nomad-external-eln-integrations",
+  "nomad-lab[infrastructure]==1.4.3"
 ]
 
 [project.urls]
@@ -31,7 +30,8 @@ repository = "https://github.com/jonathannoky/unileipzig_testoasis"
 plugins = [
   "nomad-north-jupyter>=0.2.6",
   "nomad-json-parser @ git+https://github.com/FAIRmat-NFDI/nomad-json-parser",
-  "NOMAD-PLD-UniLeipzig @ git+https://github.com/JonathanNoky/NOMAD-PLD-UniLeipzig"
+  "NOMAD-PLD-UniLeipzig @ git+https://github.com/JonathanNoky/NOMAD-PLD-UniLeipzig",
+  "nomad-external-eln-integrations @ git+https://github.com/FAIRmat-NFDI/nomad-external-eln-integrations"
 ]
 jupyter = ["jupyter-events"]
 gpu-action = []
